@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 소개 - AI 웨딩스튜디오</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 네비게이션 */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #d4a574;
+        }
+
+        /* 페이지 헤더 */
+        .page-header {
+            height: 40vh;
+            background: linear-gradient(135deg, #fdf6f0 0%, #f5e6d8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+        }
+
+        .page-header h1 span {
+            color: #d4a574;
+        }
+
+        /* 메인 콘텐츠 */
+        .content {
+            padding: 5rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        /* 팀 소개 */
+        .team-section {
+            background: #fdf6f0;
+            padding: 5rem 5%;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #d4a574 0%, #c49464 100%);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .team-card h3 {
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            color: #d4a574;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* 비전 섹션 */
+        .vision-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .vision-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .vision-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-card h3 {
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        .vision-card p {
+            color: #666;
+        }
+
+        /* 푸터 */
+        footer {
+            background: #2c2c2c;
+            color: #999;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer .logo {
+            color: #d4a574;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">AI Wedding Studio</a>
+            <ul>
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="../about/index.html" class="active">회사 소개</a></li>
+                <li><a href="../location/index.html">오시는 길</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div>
+            <h1><span>AI 웨딩스튜디오</span>를 소개합니다</h1>
+        </div>
+    </section>
+
+    <!-- 메인 콘텐츠 -->
+    <section class="content">
+        <h2 class="section-title">우리의 이야기</h2>
+        <p class="intro-text">
+            AI 웨딩스튜디오는 2024년, 모든 커플이 꿈꾸는 완벽한 웨딩사진을
+            합리적인 가격에 제공하고자 시작되었습니다.<br><br>
+            최첨단 AI 기술과 전문 디자이너의 감각을 결합하여,
+            실제 촬영 없이도 세계 어느 곳에서든 촬영한 듯한
+            아름다운 웨딩사진을 제작해 드립니다.<br><br>
+            비용과 시간의 제약 없이, 당신만의 특별한 순간을 영원히 간직하세요.
+        </p>
+    </section>
+
+    <!-- 팀 소개 -->
+    <section class="team-section">
+        <h2 class="section-title">전문가 팀</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">AI</div>
+                <h3>AI 엔진</h3>
+                <p class="role">이미지 생성</p>
+                <p>최신 생성형 AI 기술로 자연스럽고 아름다운 웨딩사진을 만들어냅니다.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">D</div>
+                <h3>디자인 팀</h3>
+                <p class="role">크리에이티브 디렉션</p>
+                <p>10년 이상의 웨딩 촬영 경험을 바탕으로 완벽한 구도와 분위기를 연출합니다.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">C</div>
+                <h3>고객 지원팀</h3>
+                <p class="role">상담 및 지원</p>
+                <p>처음부터 끝까지 고객님의 요청에 세심하게 응대합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 비전 섹션 -->
+    <section class="vision-section">
+        <h2 class="section-title">우리의 비전</h2>
+        <div class="vision-grid">
+            <div class="vision-card">
+                <div class="vision-icon">🎯</div>
+                <h3>미션</h3>
+                <p>모든 커플에게 꿈꿔왔던 웨딩사진을 현실로 만들어 드립니다.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon">💡</div>
+                <h3>비전</h3>
+                <p>AI 기술로 웨딩 산업의 새로운 패러다임을 만들어갑니다.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon">❤️</div>
+                <h3>가치</h3>
+                <p>고객의 행복한 순간을 최우선으로 생각합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <a href="../index.html" class="logo">AI Wedding Studio</a>
+        <p>AI로 만드는 특별한 웨딩사진</p>
+        <p>&copy; 2026 AI Wedding Studio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

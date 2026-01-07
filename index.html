@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 웨딩스튜디오 - 당신만의 특별한 웨딩사진</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 네비게이션 */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4a574;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4a574;
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #fdf6f0 0%, #f5e6d8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            color: #d4a574;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #d4a574;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #c49464;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 165, 116, 0.3);
+        }
+
+        /* 서비스 소개 */
+        .about {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #2c2c2c;
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* 특징 섹션 */
+        .features {
+            padding: 5rem 5%;
+            background: #fdf6f0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* 이용 방법 */
+        .how-it-works {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #d4a574;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* CTA 섹션 */
+        .cta {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #d4a574 0%, #c49464 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: white;
+            color: #d4a574;
+        }
+
+        .btn-white:hover {
+            background: #f5f5f5;
+        }
+
+        /* 푸터 */
+        footer {
+            background: #2c2c2c;
+            color: #999;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer .logo {
+            color: #d4a574;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav>
+        <div class="container">
+            <div class="logo">AI Wedding Studio</div>
+            <ul>
+                <li><a href="#about">서비스 소개</a></li>
+                <li><a href="#features">특징</a></li>
+                <li><a href="#how">이용방법</a></li>
+                <li><a href="#contact">문의하기</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI로 만드는<br><span>당신만의 웨딩사진</span></h1>
+            <p>최첨단 AI 기술로 꿈꿔왔던 완벽한 웨딩사진을 현실로 만들어 드립니다. 시간과 비용은 줄이고, 감동은 높이세요.</p>
+            <a href="#contact" class="btn">무료 상담 받기</a>
+        </div>
+    </section>
+
+    <!-- 서비스 소개 -->
+    <section class="about" id="about">
+        <h2 class="section-title">AI 웨딩스튜디오를 소개합니다</h2>
+        <div class="about-content">
+            <p>
+                AI 웨딩스튜디오는 인공지능 기술을 활용하여 고객님의 웨딩사진을 특별하게 만들어 드립니다.
+                실제 촬영 없이도 다양한 배경, 의상, 컨셉의 웨딩사진을 제작할 수 있으며,
+                고객님의 얼굴과 체형을 자연스럽게 보정하여 가장 아름다운 모습을 담아냅니다.
+                해외 로케이션 촬영의 비용 부담 없이 전 세계 어디서든 촬영한 듯한 웨딩사진을 만나보세요.
+            </p>
+        </div>
+    </section>
+
+    <!-- 특징 섹션 -->
+    <section class="features" id="features">
+        <h2 class="section-title">왜 AI 웨딩스튜디오인가요?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>합리적인 비용</h3>
+                <p>해외 촬영, 고가의 드레스 대여 비용 없이 합리적인 가격으로 프리미엄 웨딩사진을 만나보세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>무한한 배경</h3>
+                <p>파리, 산토리니, 발리 등 전 세계 어느 곳이든 배경으로 설정할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>빠른 제작</h3>
+                <p>AI 기술로 빠르게 제작되어 바쁜 예비 신혼부부도 부담 없이 이용하실 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>완벽한 보정</h3>
+                <p>자연스러운 AI 보정으로 가장 아름다운 모습을 담아 드립니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 이용 방법 -->
+    <section class="how-it-works" id="how">
+        <h2 class="section-title">이용 방법</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>사진 업로드</h3>
+                <p>본인 사진을 업로드해 주세요</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>컨셉 선택</h3>
+                <p>원하는 배경과 스타일을 선택하세요</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>AI 제작</h3>
+                <p>AI가 아름다운 웨딩사진을 만들어 드려요</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>다운로드</h3>
+                <p>완성된 사진을 다운로드하세요</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta" id="contact">
+        <h2>지금 바로 시작하세요</h2>
+        <p>특별한 웨딩사진, AI 웨딩스튜디오와 함께 만들어 보세요</p>
+        <a href="mailto:contact@aiweddingstudio.com" class="btn btn-white">무료 상담 신청</a>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="logo">AI Wedding Studio</div>
+        <p>AI로 만드는 특별한 웨딩사진</p>
+        <p>&copy; 2026 AI Wedding Studio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
